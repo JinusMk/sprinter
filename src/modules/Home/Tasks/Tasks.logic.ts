@@ -7,6 +7,7 @@ const useLogic = (): TasksLogic => {
         updateActiveField: state.updateActiveField,
         clearAll: state.clearAll
     }))
+    
     const onChange = (id: string) => () => {
         updateActiveField(id)
     }

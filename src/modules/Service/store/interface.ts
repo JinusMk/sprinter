@@ -7,10 +7,14 @@ export interface ServiceStore {
 export interface ToastInterface {
     id: string,
     duration?: number,
-    message?: string,
+    message: string,
     persist?: boolean,
     timer?: any,
-    type: string,
+    type: 'default' | 'success' | 'error',
+}
+export interface ToastPresentInterface {
+    message: string,
+    type: 'default' | 'success' | 'error',
 }
 
 declare global {

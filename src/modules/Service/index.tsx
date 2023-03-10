@@ -1,6 +1,7 @@
+import { FC } from 'react'
 import Toast from './Toast'
 
-const Service = () => {
+const Service: FC = () => {
   return (
     <>
       <Toast />

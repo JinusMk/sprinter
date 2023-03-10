@@ -5,7 +5,7 @@ import { persist } from "zustand/middleware"
 
 
 const useStore = create(persist<HomeStore>(((set) => ({
-    taskName: 'task_1',
+    taskName: '',
     taskDuration: 0,
     tasks: [],
     sprintLength: 10,
@@ -18,7 +18,8 @@ const useStore = create(persist<HomeStore>(((set) => ({
             duration: state.taskDuration,
             active: true
         }],
-        taskName: `task_${Number(state.tasks.length) + 2}`,
+        taskName: ``,
+        taskDuration: 0,
     })),
     updateField: (field, value) => set(() => ({
         [field]: value.toString()
@@ -33,7 +34,7 @@ const useStore = create(persist<HomeStore>(((set) => ({
     })),
     clearAll: () => set({
         tasks: [],
-        taskName: 'task_1',
+        taskName: '',
         taskDuration: 0
     })
 })), {name: 'sprinter-home'}))

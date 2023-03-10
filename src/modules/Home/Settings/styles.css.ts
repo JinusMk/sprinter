@@ -9,7 +9,6 @@ export default {
     padding: vars.space.p16,
   }),
   title: style({
-    fontSize: vars.fontSize.lg,
     marginBottom: vars.space.p16
   }),
   inputGroup: style({

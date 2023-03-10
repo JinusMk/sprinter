@@ -10,7 +10,6 @@ const useLogic = (): AddTask => {
         updateField(field, e.target.value)
     }
     const onAddTask = () => {
-        window.console.log('add')
         addTask()
     }
     const isDisabled = !(taskName?.trim() && taskDuration > 0 && workHours > 0 && daysInAWeek > 0 && sprintLength > 0)

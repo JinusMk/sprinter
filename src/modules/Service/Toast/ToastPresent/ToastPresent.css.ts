@@ -1,7 +1,7 @@
 
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
-import { vars } from 'common/themes/light.css';
+import theme, { vars } from 'common/themes/light.css';
 
 export default {
   toastContentWrapper: style({
@@ -28,17 +28,19 @@ export const toastStyles = recipe({
       alignSelf: 'center'
     },
     variants: {
-      default: {
-        backgroundColor: vars.color.black,
-        color: vars.color.white
-      },
-      success: {
-        backgroundColor: vars.color.colorSuccess,
-        color: vars.color.white
-      },
-      error: {
-        backgroundColor: vars.color.colorDanger,
-        color: vars.color.white
-      },
+      toastType: {
+        default: {
+          backgroundColor: theme.color.colorBlack,
+          color: theme.color.colorWhite
+        },
+        success: {
+          backgroundColor: theme.color.colorPrimaryGreen,
+          color: theme.color.colorWhite
+        },
+        error: {
+          backgroundColor: theme.color.danger,
+          color: theme.color.colorWhite
+        },
+      }
     }
 })

@@ -1,10 +1,10 @@
 import useStore from '../store'
-import {ToastInterface } from '../store/interface'
 import ToastPresent from './ToastPresent'
 import { FC } from 'react'
 
-const Toast: FC<ToastInterface> = () => {
-  const {toasts, toast} = useStore()
+const Toast: FC= () => {
+  const {toasts, toast} = useStore(state => ({toasts: state.toasts, toast: state.toast}))
+
   window.globals = window.globals || {
     service: {}
   }
@@ -13,7 +13,7 @@ const Toast: FC<ToastInterface> = () => {
   return (
     <>
       {toasts?.length
-        ? toasts?.map((toa) => <ToastPresent key={toa?.id} {...toa} />)
+        ? toasts?.map((toa) => <ToastPresent type={toa?.type} key={toa?.id} message={toa?.message} />)
         : null}
     </>
   )

@@ -1,15 +1,13 @@
 
 import { FC } from 'react'
 
-
-
-import { Toast } from 'modules/Service/store/interface'
+import { ToastPresentInterface } from 'modules/Service/store/interface'
 import styles, { toastStyles } from './ToastPresent.css'
 import Text from 'common/UI/Text'
 
-const ToastPresent: FC<Toast> = ({type, message}) => {
+const ToastPresent: FC<ToastPresentInterface> = ({type = 'default', message}) => {
   return  <div className={toastStyles({
-    [type]: type
+    toastType:  type
   })} data-testid="toast" role="presentation"
 >
   <div className={styles.toastContentWrapper}>

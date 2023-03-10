@@ -1,4 +1,4 @@
-import Button from "common/UI/Button"
+import { vars } from "common/themes/light.css"
 import Input from "common/UI/Input"
 import Text from "common/UI/Text"
 import useLogic from "./Settings.logic"
@@ -9,7 +9,7 @@ export const Settings = () => {
    
     return <div className={styles.container}>
         <div className={styles.title}>
-            <Text>Sprint Configuration</Text>
+            <Text fontSize={'xlg'} fontWeight='bold'>Sprint Configuration</Text>
         </div>
         <div className={styles.inputGroup}>
             <Input label="Work Hours (hours)" type="number" placeholder="hours" onChange={onChange('workHours')} value={workHours} />&nbsp;

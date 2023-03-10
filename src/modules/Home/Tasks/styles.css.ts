@@ -12,11 +12,16 @@ export default {
   header: style({
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'left',
-    alignItems: 'center'
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: vars.space.p24
   }),
   taskItem: style({
     display: 'flex',
     marginBottom: vars.space.p8
+  }),
+  title: style({
+    display: 'flex',
+    marginRight: vars.space.p16,
   })
 }; 

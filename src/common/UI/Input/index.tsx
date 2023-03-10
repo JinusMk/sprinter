@@ -1,8 +1,18 @@
+import { ChangeEvent, FC } from 'react'
 import styles from './styles.css'
 
-const Input = ({label, placeholder, ...rest} : any) => <div className={styles.container}>
+export interface InputProps {
+    label?: string,
+    className?: string,
+    placeholder?: string,
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void,
+    type: string,
+    value: string | number
+}
+
+const Input: FC <InputProps> = ({label, placeholder, onChange, type, value}) => <div className={styles.container}>
     {label && <label className={styles.label}>{label}</label>}
-    <input className={styles.input} placeholder={placeholder || label} {...rest} />
+    <input className={styles.input} placeholder={placeholder || label} value={value} type={type} onChange={onChange}/>
 </div>
 
 export default Input
