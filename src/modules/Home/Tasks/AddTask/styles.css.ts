@@ -1,10 +1,25 @@
 import { style } from '@vanilla-extract/css'
-import { vars } from 'common/themes/light.css'
+import themes, { vars } from 'common/themes/light.css'
 
 export default {
-    container: style({
+    wrapper: style({
         display: 'flex',
-        alignItems: 'end',
-        marginTop: vars.space.p16
+        marginTop: vars.space.p12,
+        padding: vars.space.p16,
+        background: themes.color.colorWhite,
+        borderRadius: vars.radius.base,
+        boxShadow: vars.shadow.spread
+    }),
+    inputWrapper: style({
+        display: 'flex',
+        flex: '1',
+        marginRight: vars.space.p12,
+        ':last-child': {
+            marginRight: 0
+        }
+    }),
+    button: style({
+        display: 'flex',
+        alignSelf: 'flex-end'
     })
 }

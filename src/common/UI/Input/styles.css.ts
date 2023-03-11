@@ -12,8 +12,8 @@ export default {
         marginBottom: vars.space.p4
     }),
     input: style({
-        padding: `0.453rem ${vars.space.p16}`,
-        border: `1px solid ${theme.color.buttonBorderColor}`,
+        padding: `0.453rem ${vars.space.p12}`,
+        border: `1px solid ${theme.color.colorPrimaryGreen}`,
         borderRadius: vars.radius.base,
         boxShadow: 'none',
         outline: 'none',

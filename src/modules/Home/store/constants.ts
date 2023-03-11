@@ -1,4 +1,4 @@
-const weekDays: string[] = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+const weekDays: string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
 export {
     weekDays

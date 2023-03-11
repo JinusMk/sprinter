@@ -1,11 +1,12 @@
 import { recipe } from '@vanilla-extract/recipes';
-import theme from 'common/themes/light.css'
+import theme, { vars } from 'common/themes/light.css'
 
 export const allocationItemStyles = recipe({
     base: {
-      width: 100,
-      color: theme.color.primaryText,
-      justifyContent: 'left'
+      marginBottom: vars.space.p8,
+      ':last-child': {
+        marginBottom: 0
+      }
     },
     variants: {
       overflow: {
@@ -16,11 +17,5 @@ export const allocationItemStyles = recipe({
           color: theme.color.primaryText
         }
       },
-      speed: {
-        fast: {
-          color: theme.color.warning,
-          border: 10,
-        }
-      }
     }
   })

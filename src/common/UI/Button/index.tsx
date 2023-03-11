@@ -9,10 +9,10 @@ export interface ButtonProps {
     onClick: () => void
 }
 
-const Button: FC <ButtonProps>  = ({children, onClick, disabled = false, type = 'primary'}) => 
-<button className={buttonStyles({
+const Button: FC <ButtonProps>  = ({children, onClick, disabled = false, type = 'primary', className}) => 
+<button className={`${buttonStyles({
     buttonType: type,
     disabled: disabled
-})} disabled={disabled} onClick={onClick}>{children}</button>
+})} ${className}`} disabled={disabled} onClick={onClick}>{children}</button>
 
 export default Button

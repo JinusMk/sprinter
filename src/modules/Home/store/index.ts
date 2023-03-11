@@ -1,19 +1,31 @@
 import create from 'zustand'
 import { HomeStore } from './interface'
-import { persist } from "zustand/middleware"
+import { devtools } from "zustand/middleware"
+import { generateUUID } from 'lib/utils'
 
-
-
-const useStore = create(persist<HomeStore>(((set) => ({
-    taskName: '',
-    taskDuration: 0,
-    tasks: [],
+const useStore = create<HomeStore>(devtools(((set) => ({
+    taskName: "My task three",
+    taskDuration: 8,
+    tasks: [
+        {
+            id: generateUUID(),
+            name: 'My task one',
+            duration: 12,
+            active: true
+        },
+        {
+            id: generateUUID(),
+            name: 'My task two',
+            duration: 16,
+            active: true
+        },
+    ],
     sprintLength: 10,
     workHours: 8,
     daysInAWeek: 5,
     addTask: () => set((state) => ({ 
         tasks: [...state.tasks, {
-            id: Date.now().toString(),
+            id: generateUUID(),
             name: state.taskName,
             duration: state.taskDuration,
             active: true
@@ -32,11 +44,14 @@ const useStore = create(persist<HomeStore>(((set) => ({
             return task
         })
     })),
+    removeTask: (taskId) => set((state) => ({
+        tasks: state?.tasks?.filter((task) => (task.id !== taskId))
+    })),
     clearAll: () => set({
         tasks: [],
         taskName: '',
         taskDuration: 0
     })
-})), {name: 'sprinter-home'}))
+})), {name: 'SPRINTER-home-store'}))
 
 export default useStore

@@ -1,7 +1,8 @@
-import { Task, AllocationItem } from "modules/Home/store/interface";
+import { Task, AllocationItemProps } from "modules/Home/store/interface";
 import useStore from 'modules/Home/store';
+import { weekDays } from "modules/Home/store/constants";
 
-const useLogic = (): AllocationItem => {
+const useLogic = ({weekIndex, dayIndex}: AllocationItemProps) => {
   const { tasks, workHours, sprintLength, daysInAWeek } = useStore(state => ({
     tasks: state.tasks, workHours: state.workHours, sprintLength: state.sprintLength, daysInAWeek: state.daysInAWeek
   }))
@@ -11,8 +12,6 @@ const useLogic = (): AllocationItem => {
     .reduce((sum: number, task: Task) => {
       return Number(sum) + Number(task.duration);
     }, 0);
-  const daysNeeded = Math.ceil(totalHours / workHours);
-  
 
   const processDailyData = (day : number) => {
     const remaining = totalHours - (workHours * day);
@@ -26,10 +25,15 @@ const useLogic = (): AllocationItem => {
     return 0;
   };
 
+  const isOverflow = (weekIndex * daysInAWeek) + (dayIndex + 1) >  sprintLength
+  const totalDays = (weekIndex * daysInAWeek) + dayIndex
+  const dailyHours = processDailyData?.(totalDays) || 0
+  const day = weekDays[Number(dayIndex)] 
+
   return {
-    daysInAWeek,
-    processDailyData,
-    sprintLength,
+    dailyHours,
+    day, 
+    isOverflow
   };
 };
 export default useLogic;

@@ -8,6 +8,7 @@ export interface TextProps {
     className?: string,
     as?: any, 
     children?: ReactNode,
+    onClick?: () => void
 }
 
 

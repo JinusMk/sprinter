@@ -5,11 +5,10 @@ import styles from './styles.css'
 
 const AddTask = () => {
     const {onChange, onAddTask, taskName, taskDuration, isDisabled} = useLogic()
-   
-    return <div className={styles.container}>
-        <Input label="Task Name" type="text" placeholder="task name" onChange={onChange('taskName')} value={taskName} />&nbsp;
-        <Input label="Story points (hours)" type="number" placeholder="hours" onChange={onChange('taskDuration')} value={taskDuration ? taskDuration.toString() : ''} />&nbsp;
-        <Button disabled={isDisabled} onClick={onAddTask}>Add New Task</Button>
+    return <div className={styles.wrapper}>
+         <Input className={styles.inputWrapper} label="Task Name" type="text" placeholder="Add task name" onChange={onChange('taskName')} value={taskName} />
+            <Input className={styles.inputWrapper} label="Story points (hours)" type="number" placeholder="Add hours" onChange={onChange('taskDuration')} value={taskDuration ? taskDuration.toString() : ''} />
+            <Button disabled={isDisabled} className={styles.button} onClick={onAddTask}>Add</Button>
     </div>
 }
 

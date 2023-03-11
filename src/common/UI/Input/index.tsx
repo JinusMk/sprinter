@@ -10,7 +10,7 @@ export interface InputProps {
     value: string | number
 }
 
-const Input: FC <InputProps> = ({label, placeholder, onChange, type, value}) => <div className={styles.container}>
+const Input: FC <InputProps> = ({label, placeholder, onChange, type, value, className}) => <div className={`${styles.container} ${className}`}>
     {label && <label className={styles.label}>{label}</label>}
     <input className={styles.input} placeholder={placeholder || label} value={value} type={type} onChange={onChange}/>
 </div>

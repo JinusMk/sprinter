@@ -13,7 +13,8 @@ export const vars = {
     green400: '#17c3b2',
     green600: '#15afa0',
     grey300: '#E3DFD9',
-    grey400: '#e0e0e0',
+    grey400: '#afafaf',
+    grey500: '#757575'
   }, 
   space: {
     p2: '0.125rem', //2px
@@ -41,6 +42,10 @@ export const vars = {
     medium: 500,
     semiBold: 600,
     bold: 700
+  },
+  shadow: {
+    card: `0 2px 4px rgba(209, 207, 202, 1)`,
+    spread: '0 2px 16px 4px rgba(40,44,63, 0.07)'
   }
 }
 export default createGlobalTheme(':root',{ //default theme
@@ -51,10 +56,10 @@ export default createGlobalTheme(':root',{ //default theme
     background: vars.color.offWhite,
     danger: vars.color.red700,
     warning: vars.color.yellow300,
-    buttonBorderColor: vars.color.green400,
     colorPrimaryGreen: vars.color.green400,
     colorPrimaryGreenDark: vars.color.green600,
     colorPrimaryGreenLight: vars.color.green100,
-    colorSecondary: vars.color.grey300
+    colorSecondary: vars.color.grey400,
+    colorSecondaryText: vars.color.grey500
   },
 });

@@ -1,4 +1,3 @@
-import { vars } from "common/themes/light.css"
 import Input from "common/UI/Input"
 import Text from "common/UI/Text"
 import useLogic from "./Settings.logic"
@@ -12,9 +11,9 @@ export const Settings = () => {
             <Text fontSize={'xlg'} fontWeight='bold'>Sprint Configuration</Text>
         </div>
         <div className={styles.inputGroup}>
-            <Input label="Work Hours (hours)" type="number" placeholder="hours" onChange={onChange('workHours')} value={workHours} />&nbsp;
-            <Input label="Work Days(days)" type="number" placeholder="days" onChange={onChange('daysInAWeek')} value={daysInAWeek} />&nbsp;
-            <Input label="Sprint Duration(days)" type="number" placeholder="days" onChange={onChange('sprintLength')} value={sprintLength} />&nbsp;
+            <Input className={styles.inputWrapper} label="Work hours in a day (hours)" type="number" placeholder="hours" onChange={onChange('workHours')} value={workHours} />
+            <Input className={styles.inputWrapper} label="Work days in a week (days)" type="number" placeholder="days" onChange={onChange('daysInAWeek')} value={daysInAWeek} />
+            <Input className={styles.inputWrapper} label="Sprint duration (days)" type="number" placeholder="days" onChange={onChange('sprintLength')} value={sprintLength} />
         </div>
     </div>
 }

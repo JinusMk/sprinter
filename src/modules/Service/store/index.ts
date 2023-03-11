@@ -44,6 +44,6 @@ const useStore = create<ServiceStore>(devtools((((set, get) => ({
     hideToastById:  (id) => set((state) => ({
         toasts: state?.toasts?.filter(({ id: _id }) => _id !== id)
     }))
-}))), {name: 'sprinter-service'}))
+}))), {name: 'SPRINTER-service-store'}))
 
 export default useStore

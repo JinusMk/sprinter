@@ -1,7 +1,6 @@
-import {  AddTask } from "modules/Home/store/interface";
 import useStore from 'modules/Home/store';
 
-const useLogic = (): AddTask => {
+const useLogic = ()=> {
     const {taskName, taskDuration, updateField, addTask, workHours, daysInAWeek, sprintLength} = useStore(state => ({
       taskName: state.taskName, workHours: state.workHours, daysInAWeek: state.daysInAWeek, sprintLength: state.sprintLength, taskDuration: state.taskDuration, updateField: state.updateField, addTask: state.addTask
     }))
