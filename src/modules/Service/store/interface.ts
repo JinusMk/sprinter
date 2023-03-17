@@ -1,20 +1,20 @@
 export interface ServiceStore {
    toasts: Array<ToastInterface>,
-   toast: (message: string, options: ToastInterface) => void,
+   toast: (message: string, options?: ToastInterface) => void,
    hideToastById: (id: string) => void
 }
 
 export interface ToastInterface {
-    id: string,
+    id?: string,
     duration?: number,
-    message: string,
+    message?: string,
     persist?: boolean,
     timer?: any,
-    type: 'default' | 'success' | 'error',
+    type?: 'default' | 'success' | 'error' | undefined,
 }
 export interface ToastPresentInterface {
-    message: string,
-    type: 'default' | 'success' | 'error',
+    message: string | undefined,
+    type: 'default' | 'success' | 'error' | undefined,
 }
 
 declare global {

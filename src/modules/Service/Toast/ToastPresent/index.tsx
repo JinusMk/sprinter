@@ -2,7 +2,7 @@
 import { FC } from 'react'
 
 import { ToastPresentInterface } from 'modules/Service/store/interface'
-import styles, { toastStyles } from './ToastPresent.css'
+import styles, { toastStyles } from './styles.css'
 import Text from 'common/UI/Text'
 
 const ToastPresent: FC<ToastPresentInterface> = ({type = 'default', message}) => {
@@ -12,7 +12,7 @@ const ToastPresent: FC<ToastPresentInterface> = ({type = 'default', message}) =>
 >
   <div className={styles.toastContentWrapper}>
     <Text
-      className={styles.body}
+      className={styles.message}
     >
       {message}
     </Text>

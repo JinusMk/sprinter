@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { AllocationItemProps } from "modules/Home/store/interface"
 
-import useLogic from './AllocationItem.logic'
+import useLogic from './logic'
 import { allocationItemStyles } from './styles.css'
 import Text from 'common/UI/Text'
 

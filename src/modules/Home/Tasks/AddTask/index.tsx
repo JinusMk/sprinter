@@ -1,6 +1,6 @@
 import Button from 'common/UI/Button'
 import Input from 'common/UI/Input'
-import useLogic from './AddTask.logic'
+import useLogic from './logic'
 import styles from './styles.css'
 
 const AddTask = () => {

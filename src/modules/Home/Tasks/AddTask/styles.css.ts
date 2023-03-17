@@ -8,7 +8,12 @@ export default {
         padding: vars.space.p16,
         background: themes.color.colorWhite,
         borderRadius: vars.radius.base,
-        boxShadow: vars.shadow.spread
+        boxShadow: vars.shadow.spread,
+        '@media': {
+            'screen and (max-width: 767px)': {
+              flexDirection: 'column'
+            },
+          }
     }),
     inputWrapper: style({
         display: 'flex',
@@ -16,10 +21,25 @@ export default {
         marginRight: vars.space.p12,
         ':last-child': {
             marginRight: 0
-        }
+        },
+        '@media': {
+            'screen and (max-width: 767px)': {
+                marginRight: 0,
+                marginBottom: vars.space.p12,
+                ':last-child': {
+                    marginBottom: 0
+                }
+            },
+          }
     }),
     button: style({
         display: 'flex',
-        alignSelf: 'flex-end'
+        alignSelf: 'flex-end',
+        '@media': {
+            'screen and (max-width: 767px)': {
+                marginTop: vars.space.p8,
+                width: '100%'
+            },
+          }
     })
 }

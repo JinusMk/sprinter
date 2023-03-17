@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import useLogic from './Allocation.logic'
+import useLogic from './logic'
 import styles, { bufferTimeStyles } from './styles.css'
 
 import AllocationItem from './AllocationItem'

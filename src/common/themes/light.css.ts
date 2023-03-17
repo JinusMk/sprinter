@@ -46,7 +46,7 @@ export const vars = {
   shadow: {
     card: `0 2px 4px rgba(209, 207, 202, 1)`,
     spread: '0 2px 16px 4px rgba(40,44,63, 0.07)'
-  }
+  },
 }
 export default createGlobalTheme(':root',{ //default theme
   color: {

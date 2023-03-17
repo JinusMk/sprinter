@@ -21,6 +21,12 @@ export default {
   }),
   row: style({
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    '@media': {
+      'screen and (max-width: 767px)': {
+        flex: 1,
+        flexDirection: 'column',
+      },
+    }
   })
 }; 

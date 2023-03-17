@@ -1,6 +1,6 @@
 
 import Text from 'common/UI/Text'
-import useLogic from './Summary.logic'
+import useLogic from './logic'
 import styles, { summaryTextStyles } from './styles.css'
 
 const Summary = () => {

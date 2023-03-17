@@ -6,7 +6,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "yarn build && gh-pages -d dist"
+    "deploy": "yarn build && gh-pages -d dist",
+    "format": "prettier \"./src/**/*.+(js|jsx|json|yml|yaml|md|mdx)\"",
+    "format:write": "npm run format -- --write",
+    "lint": "eslint \"./src/**/*.{js,jsx}\"",
+    "lint:write": "npm run lint -- --write",
+    "validate:format": "npm run format -- --check",
+    "validate": "npm run lint && npm run validate:format"
   },
   "dependencies": {
     "@significa/eslint-config": "^2.0.1",
@@ -14,13 +20,10 @@
     "@vanilla-extract/css": "^1.6.8",
     "@vanilla-extract/recipes": "^0.2.5",
     "@vanilla-extract/vite-plugin": "^3.1.4",
-    "chart.js": "^3.8.0",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "framer-motion": "^10.0.1",
-    "prettier": "^2.7.1",
     "react": "^18.2.0",
-    "react-chartjs-2": "^4.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "vite-tsconfig-paths": "^3.5.0",
@@ -31,8 +34,11 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^1.0.7",
+    "eslint": "^8.36.0",
     "gh-pages": "^5.0.0",
     "path": "^0.12.7",
+    "prettier": "^2.8.4",
+    "prettier-eslint-cli": "^7.1.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   }

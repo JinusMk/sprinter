@@ -9,7 +9,13 @@ export default {
     alignSelf: 'flex-start',
     flex: 1,
     overflow: 'auto',
-    padding: vars.space.p16
+    padding: vars.space.p16,
+    width: '100%',
+    '@media': {
+      'screen and (max-width: 767px)': {
+        overflow: 'unset',
+      },
+    }
   }),
   header: style({
     display: 'flex',
@@ -46,7 +52,7 @@ export default {
     display: 'flex',
     cursor: 'pointer',
     color: theme.color.colorSecondary
-  })
+  }),
 }; 
 
 export const taskDurationStyles = recipe({

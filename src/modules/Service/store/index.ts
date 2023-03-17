@@ -1,16 +1,18 @@
 import create from 'zustand'
 import { ServiceStore, ToastInterface } from './interface'
 import { devtools } from 'zustand/middleware'
+import { generateUUID } from 'lib/utils'
 
 const useStore = create<ServiceStore>(devtools((((set, get) => ({
     toasts: [],
-    toast: (message, options) => {
+    toast: (message: string, options : Partial<ToastInterface> = {}): void => {
         if (!message) {
             return
         }
-        const id = options?.id || Date.now().toString()
+        const id = options?.id || generateUUID()
+        
         const hideToast = () => {
-        set(state => ({toasts: state.toasts.filter(toa => toa.id !== id)}))
+            set(state => ({toasts: state.toasts.filter(toa => toa.id !== id)}))
         }
         if (options.duration) {
             options.duration = options.duration * 1000
@@ -28,7 +30,7 @@ const useStore = create<ServiceStore>(devtools((((set, get) => ({
             }
             newToast.timer = setTimeout(() => {
                 hideToast()
-            }, options.duration) 
+            }, options?.duration) 
         }
         let updatedToast: Array<ToastInterface> = []
         if (existing !== -1) {

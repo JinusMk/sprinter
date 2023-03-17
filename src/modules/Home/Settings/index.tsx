@@ -1,6 +1,6 @@
 import Input from "common/UI/Input"
 import Text from "common/UI/Text"
-import useLogic from "./Settings.logic"
+import useLogic from "./logic"
 import styles from './styles.css'
 
 export const Settings = () => {

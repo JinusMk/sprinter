@@ -19,7 +19,12 @@ export default {
     borderRadius: vars.radius.base,
     background: theme.color.colorWhite,
     boxShadow: vars.shadow.card,
-    marginBottom: vars.space.p24
+    marginBottom: vars.space.p24,
+    '@media': {
+      'screen and (max-width: 767px)': {
+        flexDirection: 'column',
+      },
+    },
   }),
   title: style({
     marginBottom: vars.space.p24
@@ -45,7 +50,15 @@ export default {
   heading: style({
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    '@media': {
+      'screen and (max-width: 767px)': {
+        marginBottom: vars.space.p8,
+        ':last-child':{
+          marginBottom: 0
+        }
+      },
+    }
   })
 }; 
 
